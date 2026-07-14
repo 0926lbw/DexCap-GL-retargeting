@@ -1,0 +1,119 @@
+<?xml version="1.0" ?>
+<mujoco model="human_four_finger_hand">
+  <compiler angle="degree" autolimits="true"/>
+  <option timestep="0.002" gravity="0 0 0"/>
+  <visual>
+    <global offwidth="1280" offheight="960"/>
+  </visual>
+  <default>
+    <joint type="hinge" limited="true" damping="0.02" armature="0.0001"/>
+    <geom type="capsule" size="0.006" rgba="0.76 0.82 0.88 0.55" contype="0" conaffinity="0"/>
+    <site type="sphere" size="0.004" rgba="0.10 0.55 0.45 1"/>
+  </default>
+  <worldbody>
+    <body name="wrist" pos="0 0 0">
+      <geom name="palm" type="box" pos="0 0.045 -0.004" size="0.055 0.055 0.006" rgba="0.55 0.62 0.70 0.35" contype="0" conaffinity="0"/>
+      <site name="wrist" pos="0 0 0" rgba="0.15 0.45 0.70 1"/>
+      <body name="index_mcp" pos="0.03 0.075 0" euler="0 0 -14.2666">
+        <joint name="index_mcp_abd" axis="0 0 -1" range="-20.002 20.002"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="index_mcp_flex_body" pos="0 0 0">
+          <joint name="index_mcp_flex" axis="-1 0 0" range="0 90.0002"/>
+          <site name="index_mcp" pos="0 0 0"/>
+          <geom name="index_prox_geom" fromto="0 0 0 0 0.0432 0"/>
+          <body name="index_pip_body" pos="0 0.0432 0">
+            <joint name="index_pip" axis="-1 0 0" range="0 99.9983"/>
+            <site name="index_pip" pos="0 0 0"/>
+            <geom name="index_mid_geom" fromto="0 0 0 0 0.0269 0"/>
+            <body name="index_dip_body" pos="0 0.0269 0">
+              <joint name="index_dip" axis="-1 0 0" range="0 80.0021"/>
+              <site name="index_dip" pos="0 0 0"/>
+              <geom name="index_dist_geom" fromto="0 0 0 0 0.0187 0"/>
+              <site name="index_tip" pos="0 0.0187 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="middle_mcp" pos="0.006 0.083 0" euler="0 0 0">
+        <joint name="middle_mcp_abd" axis="0 0 -1" range="-20.002 20.002"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="middle_mcp_flex_body" pos="0 0 0">
+          <joint name="middle_mcp_flex" axis="-1 0 0" range="0 90.0002"/>
+          <site name="middle_mcp" pos="0 0 0"/>
+          <geom name="middle_prox_geom" fromto="0 0 0 0 0.049 0"/>
+          <body name="middle_pip_body" pos="0 0.049 0">
+            <joint name="middle_pip" axis="-1 0 0" range="0 99.9983"/>
+            <site name="middle_pip" pos="0 0 0"/>
+            <geom name="middle_mid_geom" fromto="0 0 0 0 0.031 0"/>
+            <body name="middle_dip_body" pos="0 0.031 0">
+              <joint name="middle_dip" axis="-1 0 0" range="0 80.0021"/>
+              <site name="middle_dip" pos="0 0 0"/>
+              <geom name="middle_dist_geom" fromto="0 0 0 0 0.035 0"/>
+              <site name="middle_tip" pos="0 0.035 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="ring_mcp" pos="-0.02 0.076 0" euler="0 0 11.6883">
+        <joint name="ring_mcp_abd" axis="0 0 -1" range="-20.002 20.002"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="ring_mcp_flex_body" pos="0 0 0">
+          <joint name="ring_mcp_flex" axis="-1 0 0" range="0 90.0002"/>
+          <site name="ring_mcp" pos="0 0 0"/>
+          <geom name="ring_prox_geom" fromto="0 0 0 0 0.0457 0"/>
+          <body name="ring_pip_body" pos="0 0.0457 0">
+            <joint name="ring_pip" axis="-1 0 0" range="0 99.9983"/>
+            <site name="ring_pip" pos="0 0 0"/>
+            <geom name="ring_mid_geom" fromto="0 0 0 0 0.0286 0"/>
+            <body name="ring_dip_body" pos="0 0.0286 0">
+              <joint name="ring_dip" axis="-1 0 0" range="0 80.0021"/>
+              <site name="ring_dip" pos="0 0 0"/>
+              <geom name="ring_dist_geom" fromto="0 0 0 0 0.0196 0"/>
+              <site name="ring_tip" pos="0 0.0196 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="pinky_mcp" pos="-0.043 0.062 0" euler="0 0 12.0894">
+        <joint name="pinky_mcp_abd" axis="0 0 -1" range="-20.002 20.002"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="pinky_mcp_flex_body" pos="0 0 0">
+          <joint name="pinky_mcp_flex" axis="-1 0 0" range="0 90.0002"/>
+          <site name="pinky_mcp" pos="0 0 0"/>
+          <geom name="pinky_prox_geom" fromto="0 0 0 0 0.0361 0"/>
+          <body name="pinky_pip_body" pos="0 0.0361 0">
+            <joint name="pinky_pip" axis="-1 0 0" range="0 99.9983"/>
+            <site name="pinky_pip" pos="0 0 0"/>
+            <geom name="pinky_mid_geom" fromto="0 0 0 0 0.0275 0"/>
+            <body name="pinky_dip_body" pos="0 0.0275 0">
+              <joint name="pinky_dip" axis="-1 0 0" range="0 80.0021"/>
+              <site name="pinky_dip" pos="0 0 0"/>
+              <geom name="pinky_dist_geom" fromto="0 0 0 0 0.0224 0"/>
+              <site name="pinky_tip" pos="0 0.0224 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="index_dip_coupling" joint1="index_dip" joint2="index_pip" polycoef="0 0.6 0 0 0"/>
+    <joint name="middle_dip_coupling" joint1="middle_dip" joint2="middle_pip" polycoef="0 0.6 0 0 0"/>
+    <joint name="ring_dip_coupling" joint1="ring_dip" joint2="ring_pip" polycoef="0 0.6 0 0 0"/>
+    <joint name="pinky_dip_coupling" joint1="pinky_dip" joint2="pinky_pip" polycoef="0 0.6 0 0 0"/>
+  </equality>
+  <actuator>
+    <position name="index_mcp_abd_act" joint="index_mcp_abd" kp="8"/>
+    <position name="index_mcp_flex_act" joint="index_mcp_flex" kp="20"/>
+    <position name="index_pip_act" joint="index_pip" kp="20"/>
+    <position name="middle_mcp_abd_act" joint="middle_mcp_abd" kp="8"/>
+    <position name="middle_mcp_flex_act" joint="middle_mcp_flex" kp="20"/>
+    <position name="middle_pip_act" joint="middle_pip" kp="20"/>
+    <position name="ring_mcp_abd_act" joint="ring_mcp_abd" kp="8"/>
+    <position name="ring_mcp_flex_act" joint="ring_mcp_flex" kp="20"/>
+    <position name="ring_pip_act" joint="ring_pip" kp="20"/>
+    <position name="pinky_mcp_abd_act" joint="pinky_mcp_abd" kp="8"/>
+    <position name="pinky_mcp_flex_act" joint="pinky_mcp_flex" kp="20"/>
+    <position name="pinky_pip_act" joint="pinky_pip" kp="20"/>
+  </actuator>
+</mujoco>

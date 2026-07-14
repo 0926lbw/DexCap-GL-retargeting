@@ -1,0 +1,185 @@
+<?xml version="1.0" ?>
+<mujoco model="human_full_hand">
+  <compiler angle="degree" autolimits="true"/>
+  <option timestep="0.002" gravity="0 0 0"/>
+  <visual>
+    <global offwidth="1280" offheight="960"/>
+  </visual>
+  <default>
+    <joint type="hinge" limited="true" damping="0.02" armature="0.0001"/>
+    <geom type="capsule" size="0.006" rgba="0.76 0.82 0.88 0.55" contype="0" conaffinity="0"/>
+    <site type="sphere" size="0.004" rgba="0.10 0.55 0.45 1"/>
+  </default>
+  <worldbody>
+    <body name="wrist" pos="0 0 0">
+      <geom name="palm_plate" type="ellipsoid" rgba="0.85 0.64 0.53 1" group="2" contype="0" conaffinity="0" size="0.05 0.058 0.016" pos="0 0.055 -0.006"/>
+      <geom name="thenar_bulge" type="ellipsoid" rgba="0.86 0.65 0.54 1" group="2" contype="0" conaffinity="0" size="0.018 0.026 0.013" pos="0.035 0.035 -0.002"/>
+      <geom name="hypothenar_bulge" type="ellipsoid" rgba="0.86 0.65 0.54 1" group="2" contype="0" conaffinity="0" size="0.014 0.03 0.012" pos="-0.038 0.045 -0.002"/>
+      <geom name="palm_heel" type="capsule" rgba="0.85 0.64 0.53 1" group="2" contype="0" conaffinity="0" size="0.013" fromto="-0.028 0.012 -0.003 0.028 0.012 -0.003"/>
+      <geom name="dorsal_index_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.0127008" pos="0.03 0.075 0.014"/>
+      <geom name="dorsal_middle_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.014406" pos="0.006 0.083 0.014"/>
+      <geom name="dorsal_ring_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.0134358" pos="-0.02 0.076 0.014"/>
+      <geom name="dorsal_pinky_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.0106134" pos="-0.043 0.062 0.014"/>
+      <site name="wrist" pos="0 0 0" rgba="0.15 0.45 0.70 1"/>
+      <body name="index_mcp" pos="0.03 0.075 0" euler="0 0 -14.2666">
+        <joint name="index_mcp_abd" axis="0 0 -1" range="-20.002 20.002"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="index_mcp_flex_body" pos="0 0 0">
+          <joint name="index_mcp_flex" axis="-1 0 0" range="0 90.0002"/>
+          <site name="index_mcp" pos="0 0 0"/>
+          <geom name="index_mcp_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.009072" pos="0 0 0"/>
+          <geom name="index_prox_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.007776" fromto="0 0 0 0 0.0231 0"/>
+          <geom name="index_prox_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.006912" fromto="0 0.0201 0 0 0.0432 0"/>
+          <body name="index_pip_body" pos="0 0.0432 0">
+            <joint name="index_pip" axis="-1 0 0" range="0 99.9983"/>
+            <site name="index_pip" pos="0 0 0"/>
+            <geom name="index_pip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.00756" pos="0 0 0"/>
+            <geom name="index_mid_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.006696" fromto="0 0 0 0 0.01495 0"/>
+            <geom name="index_mid_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.006048" fromto="0 0.01195 0 0 0.0269 0"/>
+            <body name="index_dip_body" pos="0 0.0269 0">
+              <joint name="index_dip" axis="-1 0 0" range="0 80.0021"/>
+              <site name="index_dip" pos="0 0 0"/>
+              <geom name="index_dip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.00648" pos="0 0 0"/>
+              <geom name="index_dist_shaft" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.005616" fromto="0 0 0 0 0.01309 0"/>
+              <geom name="index_tip_bulb" type="sphere" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.006264" pos="0 0.0187 0"/>
+              <geom name="index_pad" type="sphere" rgba="0.85 0.62 0.52 1" group="2" contype="0" conaffinity="0" size="0.0054" pos="0 0.0157 -0.0015"/>
+              <geom name="index_nail" type="ellipsoid" rgba="0.93 0.82 0.74 1" group="2" contype="0" conaffinity="0" size="0.0018792 0.00561 0.0009" pos="0 0.00748 0.005616"/>
+              <site name="index_tip" pos="0 0.0187 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="middle_mcp" pos="0.006 0.083 0" euler="0 0 0">
+        <joint name="middle_mcp_abd" axis="0 0 -1" range="-20.002 20.002"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="middle_mcp_flex_body" pos="0 0 0">
+          <joint name="middle_mcp_flex" axis="-1 0 0" range="0 90.0002"/>
+          <site name="middle_mcp" pos="0 0 0"/>
+          <geom name="middle_mcp_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.01029" pos="0 0 0"/>
+          <geom name="middle_prox_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.00882" fromto="0 0 0 0 0.026 0"/>
+          <geom name="middle_prox_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.00784" fromto="0 0.023 0 0 0.049 0"/>
+          <body name="middle_pip_body" pos="0 0.049 0">
+            <joint name="middle_pip" axis="-1 0 0" range="0 99.9983"/>
+            <site name="middle_pip" pos="0 0 0"/>
+            <geom name="middle_pip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.008575" pos="0 0 0"/>
+            <geom name="middle_mid_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.007595" fromto="0 0 0 0 0.017 0"/>
+            <geom name="middle_mid_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.00686" fromto="0 0.014 0 0 0.031 0"/>
+            <body name="middle_dip_body" pos="0 0.031 0">
+              <joint name="middle_dip" axis="-1 0 0" range="0 80.0021"/>
+              <site name="middle_dip" pos="0 0 0"/>
+              <geom name="middle_dip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.00735" pos="0 0 0"/>
+              <geom name="middle_dist_shaft" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.00637" fromto="0 0 0 0 0.0245 0"/>
+              <geom name="middle_tip_bulb" type="sphere" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.007105" pos="0 0.035 0"/>
+              <geom name="middle_pad" type="sphere" rgba="0.85 0.62 0.52 1" group="2" contype="0" conaffinity="0" size="0.006125" pos="0 0.032 -0.0015"/>
+              <geom name="middle_nail" type="ellipsoid" rgba="0.93 0.82 0.74 1" group="2" contype="0" conaffinity="0" size="0.0021315 0.0105 0.0009" pos="0 0.014 0.00637"/>
+              <site name="middle_tip" pos="0 0.035 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="ring_mcp" pos="-0.02 0.076 0" euler="0 0 11.6883">
+        <joint name="ring_mcp_abd" axis="0 0 -1" range="-20.002 20.002"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="ring_mcp_flex_body" pos="0 0 0">
+          <joint name="ring_mcp_flex" axis="-1 0 0" range="0 90.0002"/>
+          <site name="ring_mcp" pos="0 0 0"/>
+          <geom name="ring_mcp_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.009597" pos="0 0 0"/>
+          <geom name="ring_prox_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.008226" fromto="0 0 0 0 0.02435 0"/>
+          <geom name="ring_prox_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.007312" fromto="0 0.02135 0 0 0.0457 0"/>
+          <body name="ring_pip_body" pos="0 0.0457 0">
+            <joint name="ring_pip" axis="-1 0 0" range="0 99.9983"/>
+            <site name="ring_pip" pos="0 0 0"/>
+            <geom name="ring_pip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.0079975" pos="0 0 0"/>
+            <geom name="ring_mid_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0070835" fromto="0 0 0 0 0.0158 0"/>
+            <geom name="ring_mid_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.006398" fromto="0 0.0128 0 0 0.0286 0"/>
+            <body name="ring_dip_body" pos="0 0.0286 0">
+              <joint name="ring_dip" axis="-1 0 0" range="0 80.0021"/>
+              <site name="ring_dip" pos="0 0 0"/>
+              <geom name="ring_dip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.006855" pos="0 0 0"/>
+              <geom name="ring_dist_shaft" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.005941" fromto="0 0 0 0 0.01372 0"/>
+              <geom name="ring_tip_bulb" type="sphere" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0066265" pos="0 0.0196 0"/>
+              <geom name="ring_pad" type="sphere" rgba="0.85 0.62 0.52 1" group="2" contype="0" conaffinity="0" size="0.0057125" pos="0 0.0166 -0.0015"/>
+              <geom name="ring_nail" type="ellipsoid" rgba="0.93 0.82 0.74 1" group="2" contype="0" conaffinity="0" size="0.00198795 0.00588 0.0009" pos="0 0.00784 0.005941"/>
+              <site name="ring_tip" pos="0 0.0196 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="pinky_mcp" pos="-0.043 0.062 0" euler="0 0 12.0894">
+        <joint name="pinky_mcp_abd" axis="0 0 -1" range="-20.002 20.002"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="pinky_mcp_flex_body" pos="0 0 0">
+          <joint name="pinky_mcp_flex" axis="-1 0 0" range="0 90.0002"/>
+          <site name="pinky_mcp" pos="0 0 0"/>
+          <geom name="pinky_mcp_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.007581" pos="0 0 0"/>
+          <geom name="pinky_prox_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0065" fromto="0 0 0 0 0.01955 0"/>
+          <geom name="pinky_prox_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0058" fromto="0 0.01655 0 0 0.0361 0"/>
+          <body name="pinky_pip_body" pos="0 0.0361 0">
+            <joint name="pinky_pip" axis="-1 0 0" range="0 99.9983"/>
+            <site name="pinky_pip" pos="0 0 0"/>
+            <geom name="pinky_pip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.0065" pos="0 0 0"/>
+            <geom name="pinky_mid_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0055955" fromto="0 0 0 0 0.01525 0"/>
+            <geom name="pinky_mid_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.005054" fromto="0 0.01225 0 0 0.0275 0"/>
+            <body name="pinky_dip_body" pos="0 0.0275 0">
+              <joint name="pinky_dip" axis="-1 0 0" range="0 80.0021"/>
+              <site name="pinky_dip" pos="0 0 0"/>
+              <geom name="pinky_dip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.0055" pos="0 0 0"/>
+              <geom name="pinky_dist_shaft" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0048" fromto="0 0 0 0 0.01568 0"/>
+              <geom name="pinky_tip_bulb" type="sphere" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0052345" pos="0 0.0224 0"/>
+              <geom name="pinky_pad" type="sphere" rgba="0.85 0.62 0.52 1" group="2" contype="0" conaffinity="0" size="0.0045125" pos="0 0.0194 -0.0015"/>
+              <geom name="pinky_nail" type="ellipsoid" rgba="0.93 0.82 0.74 1" group="2" contype="0" conaffinity="0" size="0.00157035 0.00672 0.0009" pos="0 0.00896 0.0048"/>
+              <site name="pinky_tip" pos="0 0.0224 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+      <body name="thumb_cmc" pos="0.035 0.028 0.012" euler="0 20.0535 -40.107">
+        <joint name="thumb_cmc_abd" axis="0 0 -1" range="-30.0001 30.0001"/>
+        <inertial pos="0 0 0" mass="0.001" diaginertia="1e-06 1e-06 1e-06"/>
+        <body name="thumb_cmc_flex_body" pos="0 0 0">
+          <joint name="thumb_cmc_flex" axis="-1 0 0" range="-30.0001 60.0001"/>
+          <site name="thumb_cmc" pos="0 0 0"/>
+          <geom name="thumb_cmc_base" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.01088" pos="0 0 0"/>
+          <geom name="thumb_meta_thick" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0096" fromto="0 0 0 0 0.01885 0"/>
+          <geom name="thumb_meta_thin" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0088" fromto="0 0.01585 0 0 0.0347 0"/>
+          <body name="thumb_mcp_body" pos="0 0.0347 0">
+            <joint name="thumb_mcp" axis="-1 0 0" range="-30.0001 60.0001"/>
+            <site name="thumb_mcp" pos="0 0 0"/>
+            <geom name="thumb_mcp_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.0096" pos="0 0 0"/>
+            <geom name="thumb_prox" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.00832" fromto="0 0 0 0 0.032 0"/>
+            <body name="thumb_ip_body" pos="0 0.032 0">
+              <joint name="thumb_ip" axis="-1 0 0" range="-30.0001 60.0001"/>
+              <site name="thumb_ip" pos="0 0 0"/>
+              <geom name="thumb_ip_knuckle" type="sphere" rgba="0.82 0.60 0.50 1" group="2" contype="0" conaffinity="0" size="0.00832" pos="0 0 0"/>
+              <geom name="thumb_dist_shaft" type="capsule" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.0072" fromto="0 0 0 0 0.02016 0"/>
+              <geom name="thumb_tip_bulb" type="sphere" rgba="0.88 0.69 0.56 1" group="2" contype="0" conaffinity="0" size="0.00832" pos="0 0.0288 0"/>
+              <geom name="thumb_pad" type="sphere" rgba="0.85 0.62 0.52 1" group="2" contype="0" conaffinity="0" size="0.0072" pos="0 0.0248 -0.002"/>
+              <geom name="thumb_nail" type="ellipsoid" rgba="0.93 0.82 0.74 1" group="2" contype="0" conaffinity="0" size="0.0055 0.00864 0.001" pos="0 0.01152 0.0072"/>
+              <site name="thumb_tip" pos="0 0.0288 0"/>
+            </body>
+          </body>
+        </body>
+      </body>
+    </body>
+  </worldbody>
+  <equality>
+    <joint name="index_dip_coupling" joint1="index_dip" joint2="index_pip" polycoef="0 0.6 0 0 0"/>
+    <joint name="middle_dip_coupling" joint1="middle_dip" joint2="middle_pip" polycoef="0 0.6 0 0 0"/>
+    <joint name="ring_dip_coupling" joint1="ring_dip" joint2="ring_pip" polycoef="0 0.6 0 0 0"/>
+    <joint name="pinky_dip_coupling" joint1="pinky_dip" joint2="pinky_pip" polycoef="0 0.6 0 0 0"/>
+  </equality>
+  <actuator>
+    <position name="index_mcp_abd_act" joint="index_mcp_abd" kp="8"/>
+    <position name="index_mcp_flex_act" joint="index_mcp_flex" kp="20"/>
+    <position name="index_pip_act" joint="index_pip" kp="20"/>
+    <position name="middle_mcp_abd_act" joint="middle_mcp_abd" kp="8"/>
+    <position name="middle_mcp_flex_act" joint="middle_mcp_flex" kp="20"/>
+    <position name="middle_pip_act" joint="middle_pip" kp="20"/>
+    <position name="ring_mcp_abd_act" joint="ring_mcp_abd" kp="8"/>
+    <position name="ring_mcp_flex_act" joint="ring_mcp_flex" kp="20"/>
+    <position name="ring_pip_act" joint="ring_pip" kp="20"/>
+    <position name="pinky_mcp_abd_act" joint="pinky_mcp_abd" kp="8"/>
+    <position name="pinky_mcp_flex_act" joint="pinky_mcp_flex" kp="20"/>
+    <position name="pinky_pip_act" joint="pinky_pip" kp="20"/>
+  </actuator>
+</mujoco>

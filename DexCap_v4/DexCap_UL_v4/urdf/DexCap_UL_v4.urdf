@@ -1,0 +1,1487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="DexCap_UL_v4">
+  <link
+    name="IMU_base_link">
+    <inertial>
+      <origin
+        xyz="-0.0046220122149849 5.28960576378495E-05 -0.01265419238121"
+        rpy="0 0 0" />
+      <mass
+        value="0.00779163606241783" />
+      <inertia
+        ixx="5.47045124257597E-07"
+        ixy="1.64587514778427E-08"
+        ixz="-6.167906463698E-08"
+        iyy="9.19746500897318E-07"
+        iyz="-1.74883332978855E-08"
+        izz="9.14286421290821E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/IMU_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/IMU_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="waist_base_link">
+    <inertial>
+      <origin
+        xyz="0.0148645221604011 0.000851217296511234 3.93615558469396E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0561803397230662" />
+      <inertia
+        ixx="7.45359936620418E-05"
+        ixy="3.07419426399858E-07"
+        ixz="1.75143279481996E-08"
+        iyy="1.59275873839188E-05"
+        iyz="1.78584153913756E-08"
+        izz="6.10582260094786E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_base_fixed_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="IMU_base_link" />
+    <child
+      link="waist_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="waist_link_1">
+    <inertial>
+      <origin
+        xyz="8.22412971057673E-09 0.0543065877847726 -7.86631111100261E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0516307682978699" />
+      <inertia
+        ixx="4.16141560612821E-05"
+        ixy="-2.02101245042119E-11"
+        ixz="4.27220747256834E-12"
+        iyy="5.29925063620277E-06"
+        iyz="2.88803151188489E-07"
+        izz="3.83716866428703E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.498039215686275 0.498039215686275 0.498039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_joint_1"
+    type="revolute">
+    <origin
+      xyz="-0.0174 0.0005 0"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="waist_base_link" />
+    <child
+      link="waist_link_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="waist_link_2">
+    <inertial>
+      <origin
+        xyz="-0.000463363101697996 7.88107457072584E-09 0.029275303264952"
+        rpy="0 0 0" />
+      <mass
+        value="0.0401488320625287" />
+      <inertia
+        ixx="8.84260128412323E-06"
+        ixy="-4.08347802032077E-11"
+        ixz="3.07425196193514E-07"
+        iyy="9.4008144343819E-06"
+        iyz="3.1406533116348E-12"
+        izz="3.84281806056291E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.1112 0"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="waist_link_1" />
+    <child
+      link="waist_link_2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="waist_link_3">
+    <inertial>
+      <origin
+        xyz="-3.82933556664911E-05 0.0708317869982616 -0.00021630790893068"
+        rpy="0 0 0" />
+      <mass
+        value="0.0650616311733785" />
+      <inertia
+        ixx="6.89483065117044E-05"
+        ixy="-1.34945447739284E-07"
+        ixz="3.49652851120256E-09"
+        iyy="6.96172970086655E-06"
+        iyz="-1.42870668143825E-07"
+        izz="6.37014663591643E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0798"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="waist_link_2" />
+    <child
+      link="waist_link_3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="waist_link_4">
+    <inertial>
+      <origin
+        xyz="0.00106692717407715 0.000725490944489426 0.000745565440080721"
+        rpy="0 0 0" />
+      <mass
+        value="0.0144718856498733" />
+      <inertia
+        ixx="8.753574273106E-07"
+        ixy="-3.07410466511051E-07"
+        ixz="1.92082311590847E-21"
+        iyy="1.30681889024597E-06"
+        iyz="1.38838261991491E-08"
+        izz="1.66553281852038E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_joint_4"
+    type="revolute">
+    <origin
+      xyz="0 0.16 0"
+      rpy="0 0 0" />
+    <parent
+      link="waist_link_3" />
+    <child
+      link="waist_link_4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="waist_link_5">
+    <inertial>
+      <origin
+        xyz="0.0102683625581229 -4.43656666343012E-11 0.0027370949510116"
+        rpy="0 0 0" />
+      <mass
+        value="0.0193558138719264" />
+      <inertia
+        ixx="2.54458244889508E-06"
+        ixy="-1.06402164800749E-15"
+        ixz="-2.44689381848796E-08"
+        iyy="1.075177151025E-06"
+        iyz="-5.85999397945955E-15"
+        izz="2.09445472982631E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/waist_link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="waist_joint_5"
+    type="revolute">
+    <origin
+      xyz="0.019 -0.00225 0"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="waist_link_4" />
+    <child
+      link="waist_link_5" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="upper_base_link">
+    <inertial>
+      <origin
+        xyz="-0.0564227120746341 -0.00127334936169381 -0.116472951707593"
+        rpy="0 0 0" />
+      <mass
+        value="2.31483014918455" />
+      <inertia
+        ixx="0.0215367419025903"
+        ixy="-8.12522859783126E-05"
+        ixz="-0.00195646307209855"
+        iyy="0.0104974056605923"
+        iyz="-0.000248000937389758"
+        izz="0.0128853855844851" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/upper_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/upper_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upper_base_fixed_joint"
+    type="fixed">
+    <origin
+      xyz="0.082323 0 0.2625"
+      rpy="0 0 0" />
+    <parent
+      link="waist_link_5" />
+    <child
+      link="upper_base_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_arm_link_1">
+    <inertial>
+      <origin
+        xyz="-0.000632319717354479 6.98752061899004E-10 -0.0208124626915561"
+        rpy="0 0 0" />
+      <mass
+        value="0.0300581253966572" />
+      <inertia
+        ixx="3.45201707975943E-06"
+        ixy="-1.9392874320865E-11"
+        ixz="-7.80052173995476E-07"
+        iyy="5.45391716553757E-06"
+        iyz="1.11808271001163E-11"
+        izz="5.51507141582864E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.745098039215686 0.745098039215686 0.745098039215686 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0.2112 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="upper_base_link" />
+    <child
+      link="left_arm_link_1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_link_2">
+    <inertial>
+      <origin
+        xyz="0.011623421180434 -0.0498018693903702 -0.000128572226499179"
+        rpy="0 0 0" />
+      <mass
+        value="0.0934176913177702" />
+      <inertia
+        ixx="8.2619354068824E-05"
+        ixy="5.88582034643947E-07"
+        ixz="4.63925671730561E-09"
+        iyy="9.75764077007099E-06"
+        iyz="-4.12882646055481E-08"
+        izz="8.21072350642737E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_2"
+    type="revolute">
+    <origin
+      xyz="-0.00029138 0 -0.0395"
+      rpy="0 1.5708 0" />
+    <parent
+      link="left_arm_link_1" />
+    <child
+      link="left_arm_link_2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_link_3">
+    <inertial>
+      <origin
+        xyz="-0.00908923688124369 -0.000315152724323997 0.0917954061956709"
+        rpy="0 0 0" />
+      <mass
+        value="0.114081893089086" />
+      <inertia
+        ixx="0.000175802718145907"
+        ixy="1.77280590162671E-08"
+        ixz="1.87753689936308E-05"
+        iyy="0.000180155591029602"
+        iyz="-5.09460909906054E-08"
+        izz="1.66786755143548E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.745098039215686 0.745098039215686 0.745098039215686 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_3"
+    type="revolute">
+    <origin
+      xyz="0.015 -0.1178 0.00029138"
+      rpy="1.5708 0 0" />
+    <parent
+      link="left_arm_link_2" />
+    <child
+      link="left_arm_link_3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_link_4">
+    <inertial>
+      <origin
+        xyz="4.57125451103213E-08 -0.103659424135775 0.000171776408550074"
+        rpy="0 0 0" />
+      <mass
+        value="0.158933176994702" />
+      <inertia
+        ixx="0.000208547199795774"
+        ixy="-1.16633412611592E-10"
+        ixz="-5.77155267790998E-11"
+        iyy="1.73685634911482E-05"
+        iyz="7.80086825622044E-07"
+        izz="0.00020664584913852" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_4"
+    type="revolute">
+    <origin
+      xyz="-0.035 -0.00029138 0.1522"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="left_arm_link_3" />
+    <child
+      link="left_arm_link_4" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_link_5">
+    <inertial>
+      <origin
+        xyz="-0.00522584682926483 5.93434082711565E-09 0.0511112401203575"
+        rpy="0 0 0" />
+      <mass
+        value="0.0880645091039901" />
+      <inertia
+        ixx="6.5205505334473E-05"
+        ixy="-2.73234872362287E-12"
+        ixz="-4.55046026568039E-06"
+        iyy="5.70405791045312E-05"
+        iyz="2.31134816681817E-10"
+        izz="1.32324017797272E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.745098039215686 0.745098039215686 0.745098039215686 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_5"
+    type="revolute">
+    <origin
+      xyz="0 -0.2148 0.00029138"
+      rpy="1.5708 0 0" />
+    <parent
+      link="left_arm_link_4" />
+    <child
+      link="left_arm_link_5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_link_6">
+    <inertial>
+      <origin
+        xyz="-0.000998257238115579 0.0165805571802313 -0.00026901120471301"
+        rpy="0 0 0" />
+      <mass
+        value="0.0131815645750554" />
+      <inertia
+        ixx="1.59843864439406E-06"
+        ixy="-2.54775306415155E-19"
+        ixz="-9.65445149963888E-20"
+        iyy="7.78122718271092E-07"
+        iyz="-3.0741046651105E-07"
+        izz="1.27404394980502E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_6"
+    type="revolute">
+    <origin
+      xyz="0.01725 0 0.0902"
+      rpy="1.5708 0 -1.5708" />
+    <parent
+      link="left_arm_link_5" />
+    <child
+      link="left_arm_link_6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_link_7">
+    <inertial>
+      <origin
+        xyz="-1.19306148294029E-10 -0.0383833432654942 0.00039638226011203"
+        rpy="0 0 0" />
+      <mass
+        value="0.0210467441200408" />
+      <inertia
+        ixx="2.57950792445175E-06"
+        ixy="3.57208926328529E-15"
+        ixz="3.5068145519623E-13"
+        iyy="1.52172772872155E-06"
+        iyz="-2.87718102458722E-07"
+        izz="1.70127668251605E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_7"
+    type="revolute">
+    <origin
+      xyz="0 0.019 0.00225"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="left_arm_link_6" />
+    <child
+      link="left_arm_link_7" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_link_8">
+    <inertial>
+      <origin
+        xyz="-1.19304649492946E-10 -0.0383833432654948 0.000396386331099857"
+        rpy="0 0 0" />
+      <mass
+        value="0.0210467441200407" />
+      <inertia
+        ixx="2.57950792445174E-06"
+        ixy="3.57214341761624E-15"
+        ixz="3.50681452602006E-13"
+        iyy="1.52172772872154E-06"
+        iyz="-2.87718102458729E-07"
+        izz="1.70127668251605E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_8"
+    type="revolute">
+    <origin
+      xyz="0 -0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_arm_link_7" />
+    <child
+      link="left_arm_link_8" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left_arm_link_9">
+    <inertial>
+      <origin
+        xyz="0.00625202814411299 -3.33066907387547E-16 0.0031828665257228"
+        rpy="0 0 0" />
+      <mass
+        value="0.0051564986346177" />
+      <inertia
+        ixx="5.42892819352814E-07"
+        ixy="-1.87805390611638E-21"
+        ixz="1.32741754323521E-07"
+        iyy="6.49882676916907E-07"
+        iyz="4.4276753858247E-21"
+        izz="3.13694731642165E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/left_arm_link_9.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_arm_joint_9"
+    type="revolute">
+    <origin
+      xyz="0 -0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="left_arm_link_8" />
+    <child
+      link="left_arm_link_9" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_1">
+    <inertial>
+      <origin
+        xyz="0.00032413681789015 6.98752067614182E-10 0.0208124626915561"
+        rpy="0 0 0" />
+      <mass
+        value="0.0300581253966572" />
+      <inertia
+        ixx="3.45201707975942E-06"
+        ixy="1.93928743220011E-11"
+        ixz="-7.80052173995474E-07"
+        iyy="5.45391716553756E-06"
+        iyz="-1.11808270997002E-11"
+        izz="5.51507141582863E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_1"
+    type="revolute">
+    <origin
+      xyz="0 -0.2112 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="upper_base_link" />
+    <child
+      link="right_arm_link_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_2">
+    <inertial>
+      <origin
+        xyz="-0.011623421180434 -0.0498018693903702 9.83313898466727E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0934176913177703" />
+      <inertia
+        ixx="8.26193540688241E-05"
+        ixy="-5.88582034643996E-07"
+        ixz="4.63925671730717E-09"
+        iyy="9.75764077007101E-06"
+        iyz="4.12882646055384E-08"
+        izz="8.21072350642738E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_2"
+    type="revolute">
+    <origin
+      xyz="-0.00029138 0 0.0395"
+      rpy="0 1.5708 0" />
+    <parent
+      link="right_arm_link_1" />
+    <child
+      link="right_arm_link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_3">
+    <inertial>
+      <origin
+        xyz="0.00908923688124358 -0.000158072868086381 0.091795406195671"
+        rpy="0 0 0" />
+      <mass
+        value="0.114081893089086" />
+      <inertia
+        ixx="0.000175802718145906"
+        ixy="1.77280590162714E-08"
+        ixz="-1.87753689936307E-05"
+        iyy="0.000180155591029602"
+        iyz="5.09460909906424E-08"
+        izz="1.66786755143548E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.745098039215686 0.745098039215686 0.745098039215686 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_3"
+    type="revolute">
+    <origin
+      xyz="-0.015 -0.1178 0.00029138"
+      rpy="1.5708 0 0" />
+    <parent
+      link="right_arm_link_2" />
+    <child
+      link="right_arm_link_3" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_4">
+    <inertial>
+      <origin
+        xyz="-4.57125451380769E-08 -0.103659424135775 0.000352694905877367"
+        rpy="0 0 0" />
+      <mass
+        value="0.158933176994702" />
+      <inertia
+        ixx="0.000208547199795774"
+        ixy="1.16633412611746E-10"
+        ixz="-5.77155267790758E-11"
+        iyy="1.73685634911482E-05"
+        iyz="-7.80086825622043E-07"
+        izz="0.00020664584913852" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.745098039215686 0.745098039215686 0.745098039215686 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_4"
+    type="revolute">
+    <origin
+      xyz="0.035 -0.00029138 0.1522"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="right_arm_link_3" />
+    <child
+      link="right_arm_link_4" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_5">
+    <inertial>
+      <origin
+        xyz="0.00492700699273677 -6.29731869759938E-09 0.0511112401361051"
+        rpy="0 0 0" />
+      <mass
+        value="0.0880645091658893" />
+      <inertia
+        ixx="6.52055053710474E-05"
+        ixy="-2.73378749949229E-12"
+        ixz="4.5504602651903E-06"
+        iyy="5.70405791414125E-05"
+        iyz="-2.3116886705125E-10"
+        izz="1.32324017806662E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.745098039215686 0.745098039215686 0.745098039215686 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_5"
+    type="revolute">
+    <origin
+      xyz="0 -0.2148 0.00029138"
+      rpy="1.5708 0 0" />
+    <parent
+      link="right_arm_link_4" />
+    <child
+      link="right_arm_link_5" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_6">
+    <inertial>
+      <origin
+        xyz="0.000998257237925977 -0.0165805571802314 0.00255374808577055"
+        rpy="0 0 0" />
+      <mass
+        value="0.0131815645750554" />
+      <inertia
+        ixx="1.59843864439406E-06"
+        ixy="2.5464501650923E-19"
+        ixz="9.61292821543578E-20"
+        iyy="7.7812271827109E-07"
+        iyz="-3.07410466511049E-07"
+        izz="1.27404394980502E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_6"
+    type="revolute">
+    <origin
+      xyz="-0.01725 0 0.0902"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="right_arm_link_5" />
+    <child
+      link="right_arm_link_6" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_7">
+    <inertial>
+      <origin
+        xyz="-1.19255189057199E-10 -0.038383343265483 0.00039638226020295"
+        rpy="0 0 0" />
+      <mass
+        value="0.0210467441202775" />
+      <inertia
+        ixx="2.57950792447084E-06"
+        ixy="3.56893484968384E-15"
+        ixz="3.50672025747284E-13"
+        iyy="1.52172772874388E-06"
+        iyz="-2.8771810246446E-07"
+        izz="1.7012766825232E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_7"
+    type="revolute">
+    <origin
+      xyz="0 -0.019 0.00225"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="right_arm_link_6" />
+    <child
+      link="right_arm_link_7" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_8">
+    <inertial>
+      <origin
+        xyz="-1.19304677248522E-10 -0.0383833432654949 0.000396382260112032"
+        rpy="0 0 0" />
+      <mass
+        value="0.0210467441200408" />
+      <inertia
+        ixx="2.57950792445174E-06"
+        ixy="3.57214316428921E-15"
+        ixz="3.50681457595078E-13"
+        iyy="1.52172772872153E-06"
+        iyz="-2.87718102458718E-07"
+        izz="1.70127668251606E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_8.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.909803921568627 0.92156862745098 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_8.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_8"
+    type="revolute">
+    <origin
+      xyz="0 -0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_arm_link_7" />
+    <child
+      link="right_arm_link_8" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right_arm_link_9">
+    <inertial>
+      <origin
+        xyz="0.00625202814411244 0 0.0031828665257228"
+        rpy="0 0 0" />
+      <mass
+        value="0.00515649863461769" />
+      <inertia
+        ixx="5.42892819352812E-07"
+        ixy="3.44277067081822E-22"
+        ixz="1.32741754323521E-07"
+        iyy="6.49882676916906E-07"
+        iyz="-4.04067845359889E-22"
+        izz="3.13694731642165E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_9.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://DexCap_UL_v4/meshes/right_arm_link_9.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_arm_joint_9"
+    type="revolute">
+    <origin
+      xyz="0 -0.06 0"
+      rpy="0 0 0" />
+    <parent
+      link="right_arm_link_8" />
+    <child
+      link="right_arm_link_9" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

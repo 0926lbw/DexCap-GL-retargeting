@@ -1,0 +1,9 @@
+name: dexcap_re
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pip
+  - pip:
+      - mujoco

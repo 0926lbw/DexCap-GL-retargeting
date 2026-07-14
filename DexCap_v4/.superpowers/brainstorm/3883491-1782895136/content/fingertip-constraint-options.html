@@ -1,0 +1,70 @@
+<h2>指尖约束策略</h2>
+<p class="subtitle">目标：骨架整体像人手，但每根手指的指尖和外骨骼末端保持一致。</p>
+
+<div class="cards">
+  <div class="card" data-choice="hard_tip_positions" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <svg viewBox="0 0 360 180" width="100%" height="180" role="img" aria-label="Hard fingertip position lock">
+        <rect x="0" y="0" width="360" height="180" fill="#f8fafc"/>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M55 145 L120 120 L175 87 L235 48" stroke="#64748b" stroke-width="9"/>
+          <path d="M55 145 L122 124 L178 91 L235 48" stroke="#0f766e" stroke-width="5"/>
+          <circle cx="235" cy="48" r="11" fill="#ef4444" stroke="#991b1b" stroke-width="3"/>
+          <circle cx="55" cy="145" r="7" fill="#334155"/>
+          <circle cx="122" cy="124" r="7" fill="#0f766e"/>
+          <circle cx="178" cy="91" r="7" fill="#0f766e"/>
+        </g>
+        <text x="235" y="31" text-anchor="middle" font-size="14" fill="#991b1b">tip = glove</text>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3>A. 硬锁指尖位置</h3>
+      <p>每帧先取外骨骼 TIP 坐标，骨架 TIP 直接等于它；中间关节沿人手 FK 形态做投影和微调。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="soft_tip_positions" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <svg viewBox="0 0 360 180" width="100%" height="180" role="img" aria-label="Soft fingertip attraction">
+        <rect x="0" y="0" width="360" height="180" fill="#f8fafc"/>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M55 145 L118 122 L174 91 L232 55" stroke="#64748b" stroke-width="9"/>
+          <path d="M55 145 L121 124 L180 92 L247 43" stroke="#2563eb" stroke-width="5"/>
+          <line x1="232" y1="55" x2="247" y2="43" stroke="#ef4444" stroke-width="3" stroke-dasharray="5 5"/>
+          <circle cx="247" cy="43" r="10" fill="#ef4444" stroke="#991b1b" stroke-width="3"/>
+          <circle cx="232" cy="55" r="8" fill="#2563eb"/>
+        </g>
+        <text x="250" y="28" text-anchor="middle" font-size="14" fill="#991b1b">target</text>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3>B. 软吸附指尖</h3>
+      <p>保留人手 FK 指尖，向外骨骼 TIP 加权靠近；运动更平滑，但指尖可能仍有误差。</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="direct_link_skeleton" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <svg viewBox="0 0 360 180" width="100%" height="180" role="img" aria-label="Direct exoskeleton link skeleton">
+        <rect x="0" y="0" width="360" height="180" fill="#f8fafc"/>
+        <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M55 145 L112 135 L170 104 L236 48" stroke="#92400e" stroke-width="7"/>
+          <circle cx="55" cy="145" r="8" fill="#92400e"/>
+          <circle cx="112" cy="135" r="8" fill="#92400e"/>
+          <circle cx="170" cy="104" r="8" fill="#92400e"/>
+          <circle cx="236" cy="48" r="10" fill="#ef4444" stroke="#991b1b" stroke-width="3"/>
+        </g>
+        <text x="172" y="33" text-anchor="middle" font-size="14" fill="#92400e">all joints = glove links</text>
+      </svg>
+    </div>
+    <div class="card-body">
+      <h3>C. 全链路直接贴外骨骼</h3>
+      <p>现有 <code>reconstruct_direct()</code> 路线：所有 landmark 等于手套 link；误差最小，但看起来更像机械结构。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>我的建议</h3>
+  <p>A：硬锁 5 个指尖位置，然后只微调 MCP/PIP/DIP 中间点。这样能满足“指尖始终一致”，同时避免整条骨架完全变成外骨骼连杆。</p>
+</div>
